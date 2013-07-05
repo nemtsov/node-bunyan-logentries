@@ -1,0 +1,25 @@
+{
+  "name": "bunyan-logentries",
+  "version": "0.1.0",
+  "description": "Bunyan logger stream for Logentries",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nemtsov/node-bunyan-logentries.git"
+  },
+  "keywords": [
+    "bunyan",
+    "logentries"
+  ],
+  "author": "nemtsov@gmail.com",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/nemtsov/node-bunyan-logentries/issues"
+  },
+  "dependencies": {
+    "node-logentries": "~0.1.0"
+  }
+}
