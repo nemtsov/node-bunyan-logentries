@@ -15,7 +15,7 @@
     "logentries"
   ],
   "author": "nemtsov@gmail.com",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nemtsov/node-bunyan-logentries/issues"
   },

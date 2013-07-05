@@ -3,6 +3,7 @@ bunyan-logentries [![Build Status](https://secure.travis-ci.org/nemtsov/node-bun
 
 Bunyan logger stream for Logentries
 
+
 Usage
 -----
 
@@ -19,3 +20,9 @@ var logger = bunyan.createLogger({
   }]
 })
 ```
+
+
+License
+-------
+
+MIT. See LICENSE
