@@ -1,5 +1,5 @@
-node-bunyan-logentries
-======================
+bunyan-logentries
+=================
 
 Bunyan logger stream for Logentries
 
