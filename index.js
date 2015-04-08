@@ -51,11 +51,17 @@ LBS.destroy = function () {
 LBS._resolveLevel = function (bunyanLevel) {
   var levelToName = {
       10: 'trace'
+    , trace: 'trace'
     , 20: 'debug'
+    , debug: 'debug'
     , 30: 'info'
+    , info: 'info'
     , 40: 'warn'
+    , warn: 'warn'
     , 50: 'error'
+    , error: 'error'
     , 60: 'fatal'
+    , fatal: 'fatal'
   };
   return levelToName[bunyanLevel];
 };
