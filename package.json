@@ -20,6 +20,6 @@
     "url": "https://github.com/nemtsov/node-bunyan-logentries/issues"
   },
   "dependencies": {
-    "le_node": "~0.2.0"
+    "le_node": "~0.2.1"
   }
 }
