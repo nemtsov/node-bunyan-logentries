@@ -43,10 +43,11 @@ LBS = LogentriesBunyanStream.prototype;
 
 LBS.write = function (rec) {
     if (!this.writable) throw new Error('failed to write to a closed stream');
+    var logentriesLevel = this._resolveLevel(rec.level)
     if (isFunction(this.transform)) {
         rec = this.transform(rec);
     }
-    this._logger.log(this._resolveLevel(rec.level), rec);
+    this._logger.log(logentriesLevel, rec);
 };
 
 LBS.end = function (rec) {
