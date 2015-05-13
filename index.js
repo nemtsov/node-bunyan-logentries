@@ -16,18 +16,18 @@ exports.createStream = function (config, options) {
 /**
  * LogentriesBunyanStream
  *
- * @param {Object} opts Logentries config and custom transform function
+ * @param {Object} config Logentries config and custom transform function
  */
-function LogentriesBunyanStream(opts) {
-    if (!opts || !opts.token) {
+function LogentriesBunyanStream(config, options) {
+    if (!config || !config.token) {
         throw new Error('config.token must be set');
     }
-    this.transform = opts.transform;
-    delete opts.transform;
+    this.transform = options && options.transform;
+    this.defaultLevel = options && options.defaultLevel || 'info';
     Stream.call(this);
     this.writable = true;
 
-    opts.levels = opts.levels || {
+    config.levels = config.levels || {
             trace: 0,  // trace -> debug
             debug: 0,  // debug -> debug
             info: 1,  // info -> info
@@ -35,7 +35,7 @@ function LogentriesBunyanStream(opts) {
             error: 4,  // error -> err
             fatal: 7  // fatal -> emerg
         };
-    this._logger = logentries.logger(opts);
+    this._logger = logentries.logger(config);
 }
 
 util.inherits(LogentriesBunyanStream, Stream);
@@ -43,11 +43,11 @@ LBS = LogentriesBunyanStream.prototype;
 
 LBS.write = function (rec) {
     if (!this.writable) throw new Error('failed to write to a closed stream');
-    var logentriesLevel = this._resolveLevel(rec.level)
+    var levelAsString = this._resolveLevel(rec.level);
     if (isFunction(this.transform)) {
         rec = this.transform(rec);
     }
-    this._logger.log(logentriesLevel, rec);
+    this._logger.log(levelAsString, rec);
 };
 
 LBS.end = function (rec) {
@@ -69,5 +69,5 @@ LBS._resolveLevel = function (bunyanLevel) {
         50: 'error',
         60: 'fatal'
     };
-    return levelToName[bunyanLevel];
+    return levelToName[bunyanLevel] || this.defaultLevel;
 };
