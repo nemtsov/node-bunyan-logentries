@@ -1,0 +1,26 @@
+{
+  "globals": {
+    "describe": false,
+    "it": false,
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false
+  },
+  "mocha": true,
+  "strict": true,
+  "node": true,
+  "noempty": true,
+  "noarg": true,
+  "eqeqeq": true,
+  "nocomma": true,
+  "immed": true,
+  "nonbsp": true,
+  "bitwise": true,
+  "curly": true,
+  "undef": true,
+  "nonew": true,
+  "forin": true,
+  "expr": true,
+  "es3": false
+}
