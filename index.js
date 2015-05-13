@@ -1,3 +1,4 @@
+'use strict';
 var logentries = require('le_node');
 var Stream = require('stream').Stream;
 var util = require('util');
@@ -42,7 +43,12 @@ util.inherits(LogentriesBunyanStream, Stream);
 LBS = LogentriesBunyanStream.prototype;
 
 LBS.write = function (rec) {
-    if (!this.writable) throw new Error('failed to write to a closed stream');
+    if(!rec){
+        throw new Error('nothing passed to log');
+    }
+    if (!this.writable) {
+        throw new Error('failed to write to a closed stream');
+    }
     var levelAsString = this._resolveLevel(rec.level);
     if (isFunction(this.transform)) {
         rec = this.transform(rec);
@@ -51,7 +57,9 @@ LBS.write = function (rec) {
 };
 
 LBS.end = function (rec) {
-    if (arguments.length) this.write(rec);
+    if (arguments.length) {
+        this.write(rec);
+    }
     this.writable = false;
     this._logger.end();
 };
