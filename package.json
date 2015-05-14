@@ -7,7 +7,7 @@
     "test": "mocha test",
     "pretest": "jshint index.js test.js",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- test.js -R spec",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
