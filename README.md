@@ -1,4 +1,4 @@
-bunyan-logentries [![Build Status](https://secure.travis-ci.org/nemtsov/node-bunyan-logentries.png)](http://travis-ci.org/nemtsov/node-bunyan-logentries)
+bunyan-logentries [![Build Status](https://secure.travis-ci.org/nemtsov/node-bunyan-logentries.png)](http://travis-ci.org/nemtsov/node-bunyan-logentries) [![Coverage Status](https://coveralls.io/repos/<account>/<repository>/badge.svg?branch=master)](https://coveralls.io/r/<account>/<repository>?branch=master)
 =================
 
 Bunyan logger stream for Logentries.
