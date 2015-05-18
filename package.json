@@ -1,6 +1,6 @@
 {
   "name": "bunyan-logentries",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Bunyan logger stream for Logentries",
   "main": "index.js",
   "scripts": {
