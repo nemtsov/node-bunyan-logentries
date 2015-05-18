@@ -31,10 +31,10 @@ var bunyanLogentries = require('bunyan-logentries');
 
 var logger = bunyan.createLogger({
   streams: [{
-      level: 'info'
-    , stream: bunyanLogentries.createStream({ token: token })
-    , type: 'raw'
-  }];
+    level: 'info',
+    stream: bunyanLogentries.createStream({token: token}),
+    type: 'raw'
+  }]
 });
 ```
 
@@ -48,29 +48,29 @@ var logger = bunyan.createLogger({
   streams: [{
     level: 'info',
     stream: bunyanLogentries.createStream({ 
-        token: token,
-        levels: { // LogEntries Mapping:debug:0, info:1, notice:2, warning:3, err:4, crit:5, alert:6, emerg:7
-            trace: 0,
-            debug: 0,
-            info: 1,
-            warn: 3,
-            error: 4
-            fatal: 7
-        },
-        timestamp: false,
-        secure: true,
-        host:'api.logentries.com'
+      token: token,
+      levels: { // LogEntries Mapping:debug:0, info:1, notice:2, warning:3, err:4, crit:5, alert:6, emerg:7
+        trace: 0,
+        debug: 0,
+        info: 1,
+        warn: 3,
+        error: 4
+        fatal: 7
+      },
+      timestamp: false,
+      secure: true,
+      host:'api.logentries.com'
     }),
     type: 'raw'
-  },{
-    transform: function(logRecord){
-        // do whatever you like to the record and then return it
-        logRecord.hostname = logRecord.hostname.toUpperCase();
-        delete logRecord.v;
-        return logRecord
+  }, {
+    transform: function (logRecord) {
+      // do whatever you like to the record and then return it
+      logRecord.hostname = logRecord.hostname.toUpperCase();
+      delete logRecord.v;
+      return logRecord
     },
     defaultLevel: 'info'
-  }];
+  }]
 });
 ```
 
