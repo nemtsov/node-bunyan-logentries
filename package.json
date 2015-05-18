@@ -6,8 +6,7 @@
   "scripts": {
     "test": "mocha test",
     "pretest": "jshint index.js test.js",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- test.js -R spec",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- test.js -R spec"
   },
   "repository": {
     "type": "git",
@@ -27,7 +26,6 @@
   },
   "devDependencies": {
     "chai": "^2.3.0",
-    "coveralls": "^2.11.2",
     "jshint": "^2.7.0",
     "mocha": "^2.2.4",
     "sinon": "^1.14.1",

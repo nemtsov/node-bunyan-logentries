@@ -17,7 +17,6 @@
   "immed": true,
   "nonbsp": true,
   "bitwise": true,
-  "curly": true,
   "undef": true,
   "nonew": true,
   "forin": true,
