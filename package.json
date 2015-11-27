@@ -22,7 +22,7 @@
     "url": "https://github.com/nemtsov/node-bunyan-logentries/issues"
   },
   "dependencies": {
-    "le_node": "~0.2.1"
+    "le_node": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^2.3.0",
