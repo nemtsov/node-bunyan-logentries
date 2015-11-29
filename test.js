@@ -14,16 +14,18 @@ sinon.assert.expose(chai.assert, {
 var logentriesBunyan = require('./index');
 
 describe('LogEntries Stream', function () {
+  var token;
   var stream;
   var logger;
 
   beforeEach(function () {
+    token = '11111111-1111-1111-1111-111111111111';
     logger = {
       log: sinon.spy(),
       end: sinon.spy()
     };
     stream = logentriesBunyan.createStream({
-      token: 'atoken'
+      token: token
     });
     stream._logger = logger;
   });
@@ -117,7 +119,7 @@ describe('LogEntries Stream', function () {
   describe('transform function', function () {
     it('performs the given transform function', function () {
       stream = logentriesBunyan.createStream({
-        token: 'atoken'
+        token: token
       }, {
         transform: function (rec) {
           rec.message = rec.msg.toUpperCase();
@@ -146,7 +148,7 @@ describe('LogEntries Stream', function () {
 
     it('can log plain text using a transform function', function () {
       stream = logentriesBunyan.createStream({
-        token: 'atoken'
+        token: token
       }, {
         transform: function (rec) {
           return rec.level + '|' + rec.hostname + '|' + rec.msg;

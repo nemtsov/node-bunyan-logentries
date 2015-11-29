@@ -27,15 +27,8 @@ function LogentriesBunyanStream(config, options) {
   this.defaultLevel = options && options.defaultLevel || 'info';
   this.writable = true;
 
-  config.levels = config.levels || {
-    trace: 0, // trace -> debug
-    debug: 0, // debug -> debug
-    info: 1, // info -> info
-    warn: 3, // warn -> warning
-    error: 4, // error -> err
-    fatal: 7 // fatal -> emerg
-  };
-  this._logger = logentries.logger(config);
+  config.levels = config.levels || ['debug', 'info', 'notice', 'warning', 'err', 'crit', 'alert', 'emerg'];
+  this._logger = new logentries(config);
 }
 
 util.inherits(LogentriesBunyanStream, Stream);
