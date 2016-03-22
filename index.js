@@ -30,7 +30,8 @@ function LogentriesBunyanStream (config, options) {
   this.writable = true
 
   // Default levels should be Buynan levels instead of default logentries levels:
-  // ['debug', 'info', 'notice', 'warning', 'err', 'crit', 'alert', 'emerg']
+  // ['debug', 'info', 'notice', 'warning', 'err', 'crit', 'alert', 'emerg'] - logentries
+  // ['trace', 'debug', 'info', 'warn', 'error', 'fatal'] - bunyan
   // See: https://github.com/trentm/node-bunyan#levels
   config.levels = config.levels || ['trace', 'debug', 'info', 'warn', 'error', 'fatal']
   this._logger = new Logentries(config)
