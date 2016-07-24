@@ -1,6 +1,6 @@
 {
   "name": "bunyan-logentries",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Bunyan logger stream for Logentries",
   "main": "index.js",
   "scripts": {
@@ -22,13 +22,13 @@
     "url": "https://github.com/nemtsov/node-bunyan-logentries/issues"
   },
   "dependencies": {
-    "le_node": "^1.1.1"
+    "le_node": "^1.3.1"
   },
   "devDependencies": {
-    "chai": "^2.3.0",
-    "jshint": "^2.7.0",
-    "mocha": "^2.2.4",
-    "sinon": "^1.14.1",
-    "sinon-chai": "^2.7.0"
+    "chai": "^3.5.0",
+    "jshint": "^2.9.2",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0"
   }
 }
